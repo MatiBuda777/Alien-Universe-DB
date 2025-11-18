@@ -18,7 +18,9 @@
     <StackPanel Background="MidnightBlue" Orientation="Vertical">
         <Button Background="Red" Content="Usuń zaznaczony"/>
         
-        <ListBox ItemsSource="{Binding Movies}" Margin="30" Background="DeepSkyBlue" Foreground="Azure">
+        <ListBox ItemsSource="{Binding Movies}"
+                 SelectionChanged="{Binding SelectedMovie}"
+                 Margin="30" Background="DeepSkyBlue" Foreground="Azure">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -31,6 +33,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        
+        <Button Background="Aqua" Content="Zobacz więcej" Command="{Binding ShowMovieCommand}"/>
         
         <Button Background="Green" Content="Dodaj film"/>
     </StackPanel>

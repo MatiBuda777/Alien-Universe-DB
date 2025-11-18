@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Linq;
 using Alien_Universe_DB.Models;
+using Avalonia.Controls;
 using ReactiveUI;
 
 namespace Alien_Universe_DB.ViewModels;
@@ -103,20 +104,24 @@ public class MainWindowViewModel : ViewModelBase
         }
     };
 
-    private Movie _selectedMovie;
-    public Movie SelectedMovie { 
+    private Movie? _selectedMovie;
+    private Movie? SelectedMovie { 
         get => _selectedMovie;
         set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
     }
-    
-    public ReactiveCommand<Unit, Unit> SelectMovieCommand { get; }
-    public Interaction<Unit, Unit> ShowMovieDetailsCommand { get; }
+
+    public ReactiveCommand<Unit, Unit> ShowMovieCommand { get; }
+    public Interaction<MainWindowViewModel, Unit> ShowMovieWindow { get; }
 
     public MainWindowViewModel()
     {
+        ShowMovieWindow = new Interaction<MainWindowViewModel, Unit>();
         var canShow = this.WhenAnyValue(x => x.SelectedMovie)
             .Select(movie => movie != null);
-        //ShowMovieDetailsCommand = ReactiveCommand.Create(, canShow);
+        ShowMovieCommand = ReactiveCommand.CreateFromTask(async () =>
+        {
+            await ShowMovieWindow.Handle(this);
+        }, canShow);
     }
 
 }

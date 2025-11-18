@@ -1,6 +1,14 @@
+using Alien_Universe_DB.Models;
+using ReactiveUI;
+
 namespace Alien_Universe_DB.ViewModels;
 
 public class MoviesWindowViewModel : ViewModelBase
 {
-    
+    private Movie? _selectedMovie = null;
+    public Movie? SelectedMovie 
+    {
+        get => _selectedMovie;
+        set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
+    }
 }

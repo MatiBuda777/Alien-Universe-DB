@@ -10,7 +10,10 @@
     
     <StackPanel Background="Gray">
         <ListBox Background="DeepSkyBlue" Foreground="Azure">
-            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </StackPanel>
 </Window>

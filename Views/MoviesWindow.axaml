@@ -7,10 +7,97 @@
         x:Class="Alien_Universe_DB.Views.MoviesWindow"
         x:DataType="vm:MoviesWindowViewModel"
         Title="Movies">
-    
-    <StackPanel Background="Gray">
-        <ListBox Background="DeepSkyBlue" Foreground="Azure">
-            
-        </ListBox>
+     
+    <StackPanel DataContext="{Binding SelectedMovie}" Margin="10" Spacing="8" Background="Gray">
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Tytuł oryginalny: " />
+          <Run Text="{Binding OriginalTitle}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Tytuł polski: " />
+          <Run Text="{Binding PolishTitle}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Rok premiery: " />
+          <Run Text="{Binding ReleaseYear}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Reżyser: " />
+          <Run Text="{Binding Director}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Scenariusz: " />
+          <Run Text="{Binding Screenwriter}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Gatunek: " />
+          <Run Text="{Binding Genre}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Czas trwania: " />
+          <Run Text="{Binding DurationMinutes}" />
+          <Run Text=" minut" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Ocena (IMDb): " />
+          <Run Text="{Binding ImdbRating}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock Text="Główne postacie: "/>
+      <ListBox DataContext="{Binding MainCharacters}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{Binding}"/>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <TextBlock>
+        <TextBlock.Inlines>
+          <Run Text="Statek: " />
+          <Run Text="{Binding ShipName}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock TextWrapping="Wrap">
+        <TextBlock.Inlines>
+          <Run Text="Opis fabuły: " />
+          <Run Text="{Binding PlotSummary}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
+      <TextBlock TextWrapping="Wrap">
+        <TextBlock.Inlines>
+          <Run Text="Ciekawostka: " />
+          <Run Text="{Binding Trivia}" />
+        </TextBlock.Inlines>
+      </TextBlock>
+
     </StackPanel>
 </Window>
