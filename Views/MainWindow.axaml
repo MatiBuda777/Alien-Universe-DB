@@ -19,7 +19,7 @@
         <Button Background="Red" Content="Usuń zaznaczony"/>
         
         <ListBox ItemsSource="{Binding Movies}"
-                 SelectionChanged="{Binding SelectedMovie}"
+                 SelectedItem="{Binding SelectedMovie, Mode=TwoWay}"
                  Margin="30" Background="DeepSkyBlue" Foreground="Azure">
             <ListBox.ItemTemplate>
                 <DataTemplate>

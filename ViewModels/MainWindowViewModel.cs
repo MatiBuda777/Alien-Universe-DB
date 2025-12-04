@@ -105,7 +105,7 @@ public class MainWindowViewModel : ViewModelBase
     };
 
     private Movie? _selectedMovie;
-    private Movie? SelectedMovie { 
+    public Movie? SelectedMovie { 
         get => _selectedMovie;
         set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
     }

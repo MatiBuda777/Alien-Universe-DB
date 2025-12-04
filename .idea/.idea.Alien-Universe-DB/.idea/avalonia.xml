@@ -3,9 +3,11 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="App.axaml" value="Alien-Universe-DB.csproj" />
         <entry key="Views/CharactersWindow.axaml" value="Alien-Universe-DB.csproj" />
         <entry key="Views/MainWindow.axaml" value="Alien-Universe-DB.csproj" />
         <entry key="Views/MoviesWindow.axaml" value="Alien-Universe-DB.csproj" />
+        <entry key="Views/Window1.axaml" value="Alien-Universe-DB.csproj" />
       </map>
     </option>
   </component>

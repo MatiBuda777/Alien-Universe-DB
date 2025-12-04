@@ -12,6 +12,7 @@
         <ListBox Background="DeepSkyBlue" Foreground="Azure">
             <ListBox.ItemTemplate>
                 <DataTemplate>
+            
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
