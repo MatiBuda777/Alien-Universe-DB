@@ -6,7 +6,7 @@ namespace Alien_Universe_DB.ViewModels;
 
 public class CharactersWindowViewModel : ViewModelBase
 {
-    private ObservableCollection<Character> characters = new()
+    private ObservableCollection<Character> _characters = new()
     {
         new Character
         {

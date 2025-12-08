@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -111,16 +112,17 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     public ReactiveCommand<Unit, Unit> ShowMovieCommand { get; }
-    public Interaction<MainWindowViewModel, Unit> ShowMovieWindow { get; }
+    public Interaction<Movie, Unit> ShowMovieWindow { get; }
 
     public MainWindowViewModel()
     {
-        ShowMovieWindow = new Interaction<MainWindowViewModel, Unit>();
+        ShowMovieWindow = new Interaction<Movie, Unit>();
         var canShow = this.WhenAnyValue(x => x.SelectedMovie)
             .Select(movie => movie != null);
         ShowMovieCommand = ReactiveCommand.CreateFromTask(async () =>
         {
-            await ShowMovieWindow.Handle(this);
+            Console.WriteLine("Opening Movie Window...");
+            await ShowMovieWindow.Handle(_selectedMovie!);
         }, canShow);
     }
 

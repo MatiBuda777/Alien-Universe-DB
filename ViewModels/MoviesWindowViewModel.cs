@@ -5,10 +5,10 @@ namespace Alien_Universe_DB.ViewModels;
 
 public class MoviesWindowViewModel : ViewModelBase
 {
-    private Movie? _selectedMovie = null;
-    public Movie? SelectedMovie 
+    public Movie SelectedMovie { get; set; }
+
+    public MoviesWindowViewModel(Movie movie)
     {
-        get => _selectedMovie;
-        set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
+        SelectedMovie = movie;
     }
 }
