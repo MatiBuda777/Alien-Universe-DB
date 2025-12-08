@@ -3,7 +3,7 @@ using Avalonia.ReactiveUI;
 
 namespace Alien_Universe_DB.Views;
 
-public partial class MoviesWindow : ReactiveWindow<MainWindowViewModel>
+public partial class MoviesWindow : ReactiveWindow<MoviesWindowViewModel>
 {
     public MoviesWindow()
     {

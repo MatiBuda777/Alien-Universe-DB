@@ -8,54 +8,54 @@
         x:DataType="vm:MoviesWindowViewModel"
         Title="Movies">
      
-    <StackPanel DataContext="{Binding SelectedMovie}" Margin="10" Spacing="8" Background="Gray">
+    <StackPanel Margin="10" Spacing="8" Background="Gray">
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Tytuł oryginalny: " />
-          <Run Text="{Binding OriginalTitle}" />
+          <Run Text="{Binding SelectedMovie.OriginalTitle}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Tytuł polski: " />
-          <Run Text="{Binding PolishTitle}" />
+          <Run Text="{Binding SelectedMovie.PolishTitle}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Rok premiery: " />
-          <Run Text="{Binding ReleaseYear}" />
+          <Run Text="{Binding SelectedMovie.ReleaseYear}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Reżyser: " />
-          <Run Text="{Binding Director}" />
+          <Run Text="{Binding SelectedMovie.Director}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Scenariusz: " />
-          <Run Text="{Binding Screenwriter}" />
+          <Run Text="{Binding SelectedMovie.Screenwriter}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Gatunek: " />
-          <Run Text="{Binding Genre}" />
+          <Run Text="{Binding SelectedMovie.Genre}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Czas trwania: " />
-          <Run Text="{Binding DurationMinutes}" />
+          <Run Text="{Binding SelectedMovie.DurationMinutes}" />
           <Run Text=" minut" />
         </TextBlock.Inlines>
       </TextBlock>
@@ -63,12 +63,12 @@
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Ocena (IMDb): " />
-          <Run Text="{Binding ImdbRating}" />
+          <Run Text="{Binding SelectedMovie.ImdbRating}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock Text="Główne postacie: "/>
-      <ListBox DataContext="{Binding MainCharacters}">
+      <ListBox ItemsSource="{Binding SelectedMovie.MainCharacters}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal">
@@ -81,21 +81,21 @@
       <TextBlock>
         <TextBlock.Inlines>
           <Run Text="Statek: " />
-          <Run Text="{Binding ShipName}" />
+          <Run Text="{Binding SelectedMovie.ShipName}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock TextWrapping="Wrap">
         <TextBlock.Inlines>
           <Run Text="Opis fabuły: " />
-          <Run Text="{Binding PlotSummary}" />
+          <Run Text="{Binding SelectedMovie.PlotSummary}" />
         </TextBlock.Inlines>
       </TextBlock>
 
       <TextBlock TextWrapping="Wrap">
         <TextBlock.Inlines>
           <Run Text="Ciekawostka: " />
-          <Run Text="{Binding Trivia}" />
+          <Run Text="{Binding SelectedMovie.Trivia}" />
         </TextBlock.Inlines>
       </TextBlock>
 
