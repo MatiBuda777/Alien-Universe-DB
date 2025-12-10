@@ -15,28 +15,31 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <StackPanel Background="MidnightBlue" Orientation="Vertical">
-        <Button Background="Red" Content="Usuń zaznaczony"/>
-        
-        <ListBox ItemsSource="{Binding Movies}"
-                 SelectedItem="{Binding SelectedMovie, Mode=TwoWay}"
-                 Margin="30" Background="DeepSkyBlue" Foreground="Azure">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding PolishTitle}"/>
-                        <TextBlock Text=" ("/>
-                        <TextBlock Text="{Binding OriginalTitle}"/>
-                        <TextBlock Text=") - "/>
-                        <TextBlock Text="{Binding ReleaseYear}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        
-        <Button Background="Aqua" Content="Zobacz więcej" Command="{Binding ShowMovieCommand}"/>
-        
-        <Button Background="Green" Content="Dodaj film"/>
+    <StackPanel Background="MidnightBlue">
+        <StackPanel Margin="30" Orientation="Vertical" Spacing="10">
+                
+            <Button Background="Red" Content="Usuń zaznaczony"/>
+            
+            <ListBox ItemsSource="{Binding Movies}"
+                     SelectedItem="{Binding SelectedMovie, Mode=TwoWay}"
+                     Margin="20" Background="DeepSkyBlue" Foreground="Azure">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding PolishTitle}"/>
+                            <TextBlock Text=" ("/>
+                            <TextBlock Text="{Binding OriginalTitle}"/>
+                            <TextBlock Text=") - "/>
+                            <TextBlock Text="{Binding ReleaseYear}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+            <Button Background="Aqua" Content="Zobacz więcej" Command="{Binding ShowMovieCommand}"/>
+            
+            <Button Background="Green" Content="Dodaj film"/>
+        </StackPanel>
     </StackPanel>
 
 </Window>

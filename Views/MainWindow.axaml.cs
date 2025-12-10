@@ -20,7 +20,7 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
             {
                 var win = new MoviesWindow()
                 {
-                    DataContext = interaction.Input
+                    DataContext = new MoviesWindowViewModel(interaction.Input),
                 };
                 Console.WriteLine(interaction.Input);
 

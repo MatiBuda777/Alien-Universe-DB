@@ -8,7 +8,7 @@
         x:DataType="vm:MoviesWindowViewModel"
         Title="Movies">
      
-    <StackPanel Margin="10" Spacing="8" Background="Gray">
+    <StackPanel Margin="10" Spacing="8" Background="DeepSkyBlue">
 
       <TextBlock>
         <TextBlock.Inlines>
