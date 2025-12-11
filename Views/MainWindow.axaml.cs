@@ -1,7 +1,6 @@
 using System;
 using System.Reactive;
 using System.Reactive.Disposables;
-using Alien_Universe_DB.Models;
 using Alien_Universe_DB.ViewModels;
 using Avalonia.ReactiveUI;
 using ReactiveUI;

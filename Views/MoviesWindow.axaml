@@ -68,7 +68,8 @@
       </TextBlock>
 
       <TextBlock Text="Główne postacie: "/>
-      <ListBox ItemsSource="{Binding SelectedMovie.MainCharacters}">
+      <ListBox ItemsSource="{Binding SelectedMovie.MainCharacters}"
+               SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal">

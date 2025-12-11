@@ -9,10 +9,52 @@
         Title="Characters">
     
     <StackPanel Background="Gray">
-        <ListBox Background="DeepSkyBlue" Foreground="Azure">
+        <ListBox ItemsSource="{Binding SelectedCharacter}" Background="DeepSkyBlue" Foreground="Azure">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-            
+                        <StackPanel Spacing="4" Orientation="Vertical">
+                            <!-- Nagłówek -->
+                            <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding FullName}" />
+
+                            <!-- Podstawowe informacje -->
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="Rola:" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Role}" />
+                                <TextBlock Text="Aktor:" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Actor}" />
+                            </StackPanel>
+
+                            <!-- Szczegóły -->
+                            <StackPanel Spacing="2" Margin="0,6,0,0">
+                                <TextBlock Text="Gatunek: " FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Species}" />
+
+                                <TextBlock Text="Rok urodzenia: " FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding BirthYear}" />
+
+                                <TextBlock Text="Funkcja w załodze: " FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding CrewFunction}" />
+
+                                <TextBlock Text="Cechy: " FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Traits}" />
+
+                                <TextBlock Text="Los: " FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Fate}" />
+
+                                <TextBlock Text="Ciekawostka: " FontWeight="SemiBold"/>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Trivia}" />
+                            </StackPanel>
+
+                            <!-- Lista filmów -->
+                            <TextBlock Text="Filmy:" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                            <ItemsControl ItemsSource="{Binding Movies}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

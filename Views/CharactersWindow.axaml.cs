@@ -6,11 +6,6 @@ namespace Alien_Universe_DB.Views;
 
 public partial class CharactersWindow : ReactiveWindow<CharactersWindowViewModel>
 {
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
-
     public CharactersWindow()
     {
         InitializeComponent();
